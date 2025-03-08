@@ -15,7 +15,7 @@ q.pop();
 int etime=min(current.remainingtime,timeQ);
 time+=etime;
 current.remainingtime-=etime;
-cout<<"Process "<<current.id<<" executed for"<<etime<<" unit. Time: "<<time<<endl;
+cout<<"Process "<<current.id<<" executed for "<<etime<<" unit. Time: "<<time<<endl;
 if(current.remainingtime>0)
 	q.push(current);
 	}
