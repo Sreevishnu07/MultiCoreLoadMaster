@@ -1,3 +1,4 @@
+
 # MultiCoreLoadMaster
 A project on multiple load balancing in a multiprocessor system, focusing on dynamic load balancing strategies to optimize task allocation and improve system efficiency.
 # Features
@@ -13,4 +14,12 @@ This is the first and the basic algorithm in load balancing which works on **cyc
 3. **Task Execution** - each processor execute its assigned task independently.
 4. **Loop back** - when the task is assigned to the last processor it again comeback to the first processor.
 
+
+=======
+The points I felt were the pros of weighted RR is:
+1)Fair distribution based on Power-In real-world scenario not all CPUs are powerful,so the powerful one(heavier weight in this case) naturally would get more tasks.
+2)Simple and predictable
+3)Load balancing for unequal systems,which is the crux of our project.
+4)And prevents starvation-unlike greedy schedulers(pririty based for instance)the lower-weight ones eventually gets tasks,it isnt ignored forever.
+5)Low overheads and high efficiency in real-time scenarios.
 
