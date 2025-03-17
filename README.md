@@ -15,7 +15,7 @@ This is the first and the basic algorithm in load balancing which works on **cyc
 4. **Loop back** - when the task is assigned to the last processor it again comeback to the first processor.
 
 
-Weighted Round Robin implementation for load balancing on MP Systems:
+**Weighted Round Robin implementation for load balancing on MP Systems:**
 The points I felt were the pros of weighted RR is:
 1)Fair distribution based on Power-In real-world scenario not all CPUs are powerful,so the powerful one(heavier weight in this case) naturally would get more tasks.
 2)Simple and predictable
