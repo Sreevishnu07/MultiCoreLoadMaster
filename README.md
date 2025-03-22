@@ -23,3 +23,28 @@ The points I felt were the pros of weighted RR is:
 4. And prevents starvation-unlike greedy schedulers(pririty based for instance)the lower-weight ones eventually gets tasks,it isnt ignored forever.
 5. Low overheads and high efficiency in real-time scenarios.
 
+# The Pros of LWR(Least-Work-Remaining)that i felt were top-notch:
+Dynamic Priority Assignment:
+LWR dynamically assigns tasks to processors based on their current workload and computational power, 
+always choosing the processor with the least effective load (i.e., workload adjusted by power).
+
+Heterogeneous Processor Support:
+LWR can handle heterogeneous processors by factoring in processor power, 
+which ensures that faster processors take on more work compared to slower ones.
+
+Min-Heap Based Scheduling:
+It uses a priority queue (min-heap) to always select the processor with the minimum effective load,
+making task allocation more efficient and balanced.
+
+# Enhancements made in the algo:
+Threshold-based Switching (LWR + RR Hybrid):
+Introduced a threshold mechanism: if the two lightest-loaded processors have a similar effective load (difference ≤ threshold), 
+the algorithm switches to Round Robin fallback for fairness, preventing any one processor from being slightly overused.
+
+Round Robin Fallback for Load Uniformity:
+By blending RR as a fallback when processors are similarly loaded, this enhancement avoids unnecessary 
+"greediness" of LWR in marginal cases, distributing tasks more uniformly under mild load variations.
+
+Adaptive Balancing Strategy:
+This enhancement makes the scheduler adaptive: it behaves like pure LWR when there’s 
+significant imbalance but gracefully shifts to RR when system load is already well-distributed, making it more robust in real-world scenarios.
