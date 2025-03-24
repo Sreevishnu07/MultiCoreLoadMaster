@@ -22,7 +22,7 @@
     G. AI-Based Load Balancing: Uses machine learning to predict and distribute workloads dynamically.
 
 # Analysis of Load Balancing Algorithms
-Analyzed different algorithms based on their ability to dynamically distribute workloads, optimize performance, and adapt to system states.
+Analysis of different algorithms based on their ability to dynamically distribute workloads, optimize performance, and adapt to system states.
 
 A. Round Robin (RR)
     
