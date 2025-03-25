@@ -74,3 +74,71 @@ C. Least Connections (LC)
     
     Suitability:
     > Good for real-time adaptive balancing, but may need additional metrics for better efficiency.
+
+D. Least Load (LL)
+
+    Description:
+    > Assigns tasks to the processor with the lowest CPU utilization at that moment.
+    > Uses real-time CPU load monitoring to distribute workloads dynamically.
+    
+    Benefits:
+    > Ensures efficient CPU usage and prevents overloading.
+    > Highly adaptive to changing system states.
+    
+    Drawbacks:
+    > Requires continuous monitoring of processor load, adding overhead.
+    > May cause task migration overhead if loads fluctuate rapidly.
+    
+    Suitability:
+    > One of the best adaptive algorithms but requires careful tuning to avoid excessive migrations.
+
+E. Randomized Load Balancing
+
+    Description:
+    > Assigns tasks randomly to processors.
+    > Works best when tasks are short-lived and evenly distributed.
+    
+    Benefits:
+    > Very low overhead (no tracking or monitoring required).
+    > Avoids bottlenecks caused by static rules.
+    
+    Drawbacks:
+    > Can result in uneven workload distribution, leading to some processors being overloaded.
+    > Not adaptive to system state changes.
+    
+    Suitability: 
+    > Useful for systems with small, short-lived tasks, but not ideal for optimizing resource utilization.
+
+F. Threshold-Based Load Balancing
+
+    Description:
+    > Sets predefined threshold values (e.g., CPU usage, queue length).
+    > If a processor’s load exceeds the threshold, new tasks are moved to a less-loaded processor.
+    
+    Benefits:
+    > More adaptive than static algorithms like RR & WRR.
+    > Helps prevent overloads by redistributing tasks dynamically.
+    
+    Drawbacks:
+    > Requires manual tuning of threshold values.
+    > May introduce migration delays when tasks need to be moved.
+    
+    Suitability:
+    > Good for dynamic adaptation, but may need fine-tuning to avoid frequent task migrations.
+
+G. AI-Based Load Balancing
+
+    Description:
+    > Uses machine learning or predictive algorithms to forecast workload patterns and dynamically allocate tasks.
+    > Can analyze historical data and predict which processor will be least loaded in the near future.
+    
+    Benefits:
+    > Highly adaptive to varying workloads.
+    > Can self-optimize over time using real-world data.
+    
+    Drawbacks:
+    > Requires training data and can be complex to implement.
+    > Overhead may be higher than traditional methods.
+    
+    Suitability:
+    > Best for large-scale cloud or dynamic systems, but may be overkill for smaller systems.
