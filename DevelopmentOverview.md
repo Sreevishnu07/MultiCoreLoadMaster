@@ -142,3 +142,30 @@ G. AI-Based Load Balancing
     
     Suitability:
     > Best for large-scale cloud or dynamic systems, but may be overkill for smaller systems.
+
+Comparison & Best Fit for Our Project
+
+    Algorithm        Adaptability        Performance Optimization        Overhead        Best Use Case
+    
+    Round Robin          No                       Limited	               Low	    Simple workloads
+    Weighted RR	     No	                      Moderate	               Low	    Heterogeneous processors
+    Least Connections    Yes	               Good	              Moderate	    Dynamic workloads
+    Least Load	     Yes	               High	               High	    Real-time balancing
+    Randomized	     No	                       Poor	              Very Low	    Short tasks, even load
+    Threshold-Based	     Yes	               Good	              Moderate	    Preventing overloads
+    AI-Based	     Yes	              Very High	               High	    Large-scale adaptive systems
+
+Conclusion of Analysis
+
+    For our dynamic load balancing project, we need an algorithm that:
+    1. Adapts to workload changes dynamically
+    2. Optimizes CPU usage efficiently
+    3. Minimizes overhead while improving response times
+    
+    Best Choices:
+    
+    A. Least Load – Best real-time adaptation with efficient CPU usage.
+    
+    B. Threshold-Based – Simple yet effective dynamic balancing.
+    
+    C. AI-Based – Ultimate efficiency but complex to implement.
