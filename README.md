@@ -48,3 +48,38 @@ By blending RR as a fallback when processors are similarly loaded, this enhancem
 Adaptive Balancing Strategy:
 This enhancement makes the scheduler adaptive: it behaves like pure LWR when there’s 
 significant imbalance but gracefully shifts to RR when system load is already well-distributed, making it more robust in real-world scenarios.
+
+
+# Least Connection Load Balancing in Multiprocessor System
+
+In this algo, when a task arrives, it is assigned to the processor with the **least number of currently running tasks**, and so on with other processors.
+
+## ⚙️ Approaches Implemented
+
+### 1. Naive Approach (Without Heap)
+
+- I used a simple vector to tracke the number of task per processor
+- For each task, we **loop through all processors** to find the one with the minimum load.
+
+#### ⏱ Time Complexity:
+- **Per task assignment**: `O(P)`  
+- **Total for N tasks**: `O(N × P)` → Roughly like `O(N^2)` 
+
+---
+
+### 2. Optimized Approach (Using Min-Heap / Priority Queue)
+
+- I used **priority queue** configured as **min-heap** to correctly get the processor with the minimum load.
+- After each assignment, the processor is pushed back into the heap with updated load.
+
+#### ⏱ Time Complexity:
+- **Per task assignment**: `O(log P)`  
+- **Total for N tasks**: `O(N × log P)` ✅
+
+## 🚀 Future Enhancements
+
+- Add support for task completion.
+- Simulate processor speeds.
+- Visualize load over time.
+
+
