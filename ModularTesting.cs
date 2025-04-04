@@ -1,8 +1,6 @@
-//Implementing modular C# versions of the Analysed.
+//Implementing modular C# versions of the Analysed Algorithms.
 //Each algorithm will be implemented in a separate method for easy testing and comparison.
-//This is a basic implementaion waiting further improvement.
-//Handles Load Assignment.
-//Initializes a LoadBalancer class with multiple algorithms: Round Robin, Weighted Round Robin, Least Connections, Least Load, and Threshold-Based. The Main function tests the Round Robin method.
+//Initializes a LoadBalancer class with multiple algorithms: Round Robin, Weighted Round Robin, Least Connections, Least Load, and Threshold-Based.
 
 using System;
 using System.Collections.Generic;
@@ -69,6 +67,18 @@ class LoadBalancer
         }
     }
 
+    // AI-Based Load Balancing Algorithm
+    public void AIBasedAssign()
+    {
+        var predictedLeastLoaded = processors.OrderBy(p => PredictLoad(p)).First();
+        predictedLeastLoaded.Load++;
+    }
+
+    private int PredictLoad(Processor p)
+    {
+        return p.Load + new Random().Next(0, 3); // Simulated AI prediction
+    }
+
     // Display processor loads
     public void PrintLoads()
     {
@@ -84,6 +94,12 @@ class Program
         LoadBalancer lb = new LoadBalancer(3);
         for (int i = 0; i < 10; i++) lb.RoundRobinAssign();
         lb.PrintLoads();
+
+        Console.WriteLine("\nAI-Based Load Balancing:");
+        for (int i = 0; i < 10; i++) lb.AIBasedAssign();
+        lb.PrintLoads();
     }
 }
+
+
 
