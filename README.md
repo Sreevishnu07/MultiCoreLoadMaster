@@ -107,7 +107,7 @@ Execution time measurement
 ### Module 3: Machine Learning-Based Load Prediction
 ### This module leverages powerful machine learning models to intelligently predict which processor will best handle an upcoming task based on historical task data and system states.
 
-🔷 Models Used
+### Models Used
 ### XGBoost (Accuracy: 85%)
 
 ### MLP (Multi-Layer Perceptron) (Accuracy: 80%)
