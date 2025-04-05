@@ -82,4 +82,54 @@ In this algo, when a task arrives, it is assigned to the processor with the **le
 - Simulate processor speeds.
 - Visualize load over time.
 
+### AI-Based Load Balancing Strategies
+### Module 2: AI-Based Refinement Using Simple Moving Average (SMA)
+This module enhances task distribution by predicting the near-future load of each processor using a lightweight statistical technique: Simple Moving Average (SMA).
+
+### How it works:
+
+Monitors recent load history of each processor.
+Predicts the short-term load using the average of the last n entries.
+Assigns incoming tasks to the processor with the lowest predicted load and highest priority.
+
+### Key Features:
+Real-time task assignment based on load trends.
+Efficient for systems with moderate load volatility.
+
+### Includes:
+
+Load history tracker
+Task execution logger
+Execution time measurement
+
+### Advantage: Minimal overhead and fast response with better decision quality than random or round-robin strategies.
+
+### Module 3: Machine Learning-Based Load Prediction
+### This module leverages powerful machine learning models to intelligently predict which processor will best handle an upcoming task based on historical task data and system states.
+
+🔷 Models Used
+### XGBoost (Accuracy: 85%)
+
+### MLP (Multi-Layer Perceptron) (Accuracy: 80%)
+
+### How It Works
+Trained on labeled data of task attributes and processor performance.
+
+### Input features include:
+
+Task duration estimate
+Processor priority
+Historical load data
+
+### Time-based patterns
+
+Output is the most suitable processor for the new task.
+
+### Key Features:
+
+Model comparison with performance metrics.
+Prediction logs with accuracy tracking.
+Seamless fallback to traditional logic in case of failure.
+
+### Note: The ML models have been trained and validated on simulated task load data. Future improvements may include Reinforcement Learning or real-time model updates.
 
