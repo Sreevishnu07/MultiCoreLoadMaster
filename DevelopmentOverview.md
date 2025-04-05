@@ -169,3 +169,11 @@ Conclusion of Analysis
     B. Threshold-Based – Simple yet effective dynamic balancing.
     
     C. AI-Based – Ultimate efficiency but complex to implement.
+
+Further Improvement
+
+    During the implemantion phase for the best choices, I decided to go for the AI Based approach and a much more refined
+    Reinforcement Learning Based approach. After analysing the code implementations and seeing both approaches work I finalised
+    the decision on a hybrid Reinforcement Learning-Based Approach. The hybrid approach uses RL (Q-learning) to learn optimal
+    processor (or core) selection based on predicted load, data center distance, and task priority. After assigning the task to a 
+    processor, it adds the task to that processor’s as it awaits execution.
